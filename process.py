@@ -68,9 +68,80 @@ def get_avg_rating_per_location_per_park(dataset):
         totals[park][location][1] += 1
 
      resul ={}
-     for park,locations in totls.iteam(:
+     for park,locations in totls.iteams:
          result[park] = {
              loc: values[0] / values [1]
              for loc, values in locations.iteams()
          }
          return result
+    def get_revew_counts_per_park(dataset):
+        """Return a dict mapping each ark to its total number of reviews"""
+        counts = defaultdict(int)
+        for row in dataset:
+            counts[row["Branch"]] += 1
+        return dict(counts)
+    def get_top_coation_by_avg_rating(dataset, park, top_n=10):
+        """
+        For a given park, return thr top_n locations with the highest average rating.
+        Returns a list of (location, average_rating) tuples, sorted descending.
+       """
+        park_data =defaultdict(lambada: [0, 0 ])
+        for row in dataset:
+            if row["Branch"] == park:
+                lock =row["Reviewer_Location"]
+                park_data[loc][0] +=row["Rating"]
+                park_data[loc][1] += 1
+
+        averages = [
+            (loc, values [0] / values [1])
+            for loc, vlues in park_data.items()
+            ]
+        averages.sort(key=lambda x: -x[1])
+        return averages[:top_n]
+
+    def get_avg_rating_by_month(dataset, park):
+        """For a given park, return a list of(month_number, average_rating) tuples
+        ordered by calendar month (12). Months with no review are omitted
+        """
+        month_totals = defaltdict(lambda:[0,0])
+        for row in dataset:
+            if row["Branch"] == park:
+                parts =row["Year_Month"].split("-")
+                if len(parts) <2 or not parts[1].isigit():
+                    continue
+                    monh = int(parts[1])
+                    month_totals[month][0] += row["Rating"]
+                    month_totals[month][1] += 1
+
+        return sorted(
+            [(month,value [0] / values [1]) for month, values in month_totals.items()],
+            key=lambda x: x[0]
+        )
+
+    def get-park_summary(dataset):
+    """Return a dict mapping each park to summary dict containing:
+    - num_reviews  (int)
+    - num_positive (int) ratings >= 4 count as positive
+    -avg_rating  (float
+    -num_countries (int) district Reviewer_Location values
+    """
+
+    accumulator =defaultdict(
+        lambda: {"ratings": [], "locations": set ()}
+    )
+    for row in datase:
+        park= row ["Branch"]
+        accumulator[park]["ratings"].append(row)["Ratings"])
+        accumulator[park]["locations"].add(row["Reviewer_Location"])
+
+
+    summary ={}
+    for park, data in accumulator.items():
+        ratings = data["rattings"]
+        summary[park]={
+        "num_reviews": len(ratings),
+        "num_possitive": sum(1 for r in ratings if r>4),
+        "avg_rating": raound(sum(ratings) / len(atings) ,2),
+        "num_countries": len(data["locations"]),
+        }
+    return summary
