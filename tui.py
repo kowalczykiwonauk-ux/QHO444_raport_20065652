@@ -2,6 +2,7 @@
  Its functions are responsible for displaying information and collecting user input as needed.
  Each function should make use of its parameters to manage input and output operations, and may return structured data
   such as lists or tuples where appropriate."""
+from fontTools.feaLib import location
 
 MAIN_MENU_OPTIONS = ["A", "B", "C", "X"]
 VIEW_MENU_OPTIONS = ["A", "B", "C", "D","X"]
@@ -77,4 +78,56 @@ def get_export_format():
         if entry.isdigit():
             index =int(entry) - 1
             if 0< = index < len(EXPORT_FORMATS):
-                return EXPORT_FORMATS
+                return EXPORT_FORMATS[index]
+        print(f"Invalid input. Please enter 1, 2, or 3.")
+
+def display_review(park, reviews):
+    """DDisplay all reviews for a given park."""
+    print(f"\n --- Reviews for {park} ({len(reviews)} total) --:")
+    if not reviews:
+        print("No reviews found.")
+        return
+    print(f{'ID':<12} {'Rating' :<8}{'Year-Month' :<12} {'Location'}")
+    print("-"*60)
+    for reviews in reviews:
+        print(
+            f"{review['Review_ID']:<12} {review['Rating']:<8} "
+            f"{review['Year_Month']:<12}  {review['Reviewr_Location]}"
+        )
+        
+def display_review_count(park, location, reviews):
+    """Display the number of reviews  fro a park from a location"""
+    print(f"\n{park} has received {count} review(s) from {location}")
+
+def display_average_rating(park,year, average):
+    """Display the average rating for a park  in a given year"""
+    if average is None:
+        print(f"\No reviews found for {park} in {year}.")
+    else:
+        print(f"\Average rating for {park} in {year}: {average:.2f} / 5.00")
+
+def display_avg_by_location(results):
+    """Display the average score per park for every reviewer loaction"""
+    for park, location_data in sorted(results.items()):
+        print(f"\n{'=' * 50})
+        print(f"   {park}")
+        print(f"{'=' * 50}")
+        print(f"  {'Location':<40} {'Avg Rating'}")
+        print(f"  {'-'* 50}")
+        for location, avg in sorted(location_data.items(), key=lambda x: -x[1]):
+            print(f"  {location:<40} { ava:.2f}")
+
+def display_export_success(filepath):
+    """Confirm that data has been exported successfully"""
+    print(f"\nData exported succesully.")
+
+def display_invalid_choice():
+    """Inform the user that their menu input was invalid"""
+    print("Invalid choice. Please one of the listed options.")
+
+def dispaly_exit():
+    """Display a goodbye message when the user exits."""
+    print(2\nThnak you for using the Disneyland Reviews analysis system. Goodbye!")
+
+#------------------------------------
+#
