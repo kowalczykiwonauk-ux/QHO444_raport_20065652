@@ -3,13 +3,12 @@ This module implements the OOP-based data export feature (Section D).
 
 Class hierarchy:
 
-    DataExporter  (abstract base)
-        └── TxtExporter
-        └── CsvExporter
-        └── JsonExporter
+DataExporter  (abstract base)
+-> TxtExporter
+-> CsvExporter
+-> JsonExporter
 
-Each concrete exporter receives a park summary dict and writes it to a file
-in its respective format.
+Each concrete exporter receives a park summary dict and writes it to a file in its respective format.
 """
 
 import csv
@@ -22,8 +21,7 @@ class DataExporter(ABC):
     """
     Abstract base class for all park-data exporters.
 
-    Subclasses must implement the `export` method to serialise the provided
-    summary data to a specific file format.
+    Subclasses must implement the `export` method to serialise the provided summary data to a specific file format.
     """
 
     def __init__(self, summary, output_dir="exports"):
