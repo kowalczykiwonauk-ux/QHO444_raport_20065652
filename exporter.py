@@ -14,7 +14,7 @@ Each concrete exporter receives a park summary dict and writes it to a file in i
 import csv
 import json
 import os
-from abc import ABC, abstractmethod .
+from abc import ABC, abstractmethod
 
 
 class DataExporter(ABC):
