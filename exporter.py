@@ -8,7 +8,7 @@ DataExporter  (abstract base)
 -> CsvExporter
 -> JsonExporter
 
-Each concrete exporter receives a park summary dict and writes it to a file in its respective format.
+Each concrete exporter receives a park summary dict and writes it to a file in its respective format
 """
 
 import csv
