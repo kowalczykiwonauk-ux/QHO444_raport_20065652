@@ -55,7 +55,7 @@ def handle_view_data(dataset, parks):
 
 
 def handle_visualise_data(dataset, parks):
-    """Handle the 'Visualise Data' sub-menu (main menu option B)."""
+    """Handle the 'Visualise Data' sub-menu (main menu option B)"""
     while True:
         choice = tui.display_visual_menu()
         tui.confirm_choice(choice)
