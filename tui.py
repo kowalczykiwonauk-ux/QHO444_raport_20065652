@@ -32,7 +32,7 @@ def display_main_menu():
 
 
 def display_view_menu():
-    """Display the View Data sub-menu and return the user's validated choice."""
+    """Display the View Data sub-menu and return the user's validated choice"""
     print("\nPlease enter one of the following options:")
     print("  A - View Reviews for a Park")
     print("  B - Number of Reviews by Location")
