@@ -10,7 +10,7 @@ from collections import defaultdict
 
 def load_data(filepath):
     """
-    Read the CSV file at filepath and return a list of row dictionaries.
+    Read the CSV file at filepath and return a list of row dictionaries
     Each dictionary maps column names to their string (or cast) values.
     The Rating column is converted to int; all others remain strings.
     """
