@@ -35,7 +35,7 @@ def show_reviews_per_park_pie(review_counts):
 def show_top_locations_bar(park, location_averages):
     """
     Display a bar chart of the top 10 locations with the highest average rating
-    for the specified park.
+    for the specified park
 
     ----------
     Parameters
