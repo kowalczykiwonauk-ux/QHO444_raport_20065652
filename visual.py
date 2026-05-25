@@ -8,7 +8,7 @@ MONTH_NAMES = [
 ]
 
 def show_reviews_per_park_pie(review_counts):
-    """ Display the reviews per park pie
+    """ Display the reviews per park - pie chart- showing the numbers of review each park has received
     ----------
     Parameters
     -----------
