@@ -1,13 +1,13 @@
 # Module Code: 	QHO444 Software product + report.
 
-#This module manages the overall flow of the program.
-#It directs how the user engages with the system and determines the program’s behaviour.
+# This module manages the overall flow of the program.
+# It directs how the user engages with the system and determines the program’s behaviour.
 # It relies on the other modules to handle user interaction, perform processing tasks, and present information visually.
 
 
-#Notes: model 'tui' should store user input/output
- #      model 'process' is used for any action taken
- #      model 'visual' will represent any visualization done
+# Notes: model 'tui' should store user input/output
+#      model 'process' is used for any action taken
+#      model 'visual' will represent any visualization done
 
 import os
 
@@ -55,7 +55,7 @@ def handle_view_data(dataset, parks):
 
 
 def handle_visualise_data(dataset, parks):
-    """Handle the 'Visualise Data' sub-menu (main menu option B)"""
+    """Handle the 'Visualize Data' sub-menu (main menu option B)"""
     while True:
         choice = tui.display_visual_menu()
         tui.confirm_choice(choice)

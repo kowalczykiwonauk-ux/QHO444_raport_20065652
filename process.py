@@ -1,8 +1,8 @@
 # # Module Code: 	QHO444 Software artifact with report
 #
-# Data processing task are hande in this  module.
-#It will primarily include functions that take the full dataset as input and apply the required operations to produce the final output in the appropriate format.
-#Most parts of the project are expected to rely on functions defined within this module
+# Data processing task are handled in this  module.
+# It will primarily include functions that take the full dataset as input and apply the required operations to produce the final output in the appropriate format.
+# Most parts of the project are expected to rely on functions defined within this module
 
 import csv
 from collections import defaultdict
