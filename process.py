@@ -86,7 +86,7 @@ def get_avg_rating_per_location_per_park(dataset):
 
 
 def get_review_counts_per_park(dataset):
-    """Return a dict mapping each park to its total number of reviews."""
+    """Return a dict mapping each park to its total number of reviews"""
     counts = defaultdict(int)
     for row in dataset:
         counts[row["Branch"]] += 1
