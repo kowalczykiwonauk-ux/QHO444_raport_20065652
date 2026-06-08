@@ -1,4 +1,4 @@
-# Module Code: 	QHO444 Software artifact with report
+# Module Code: 	QHO444 Software product + report.
 
 #This module manages the overall flow of the program.
 #It directs how the user engages with the system and determines the program’s behaviour.
